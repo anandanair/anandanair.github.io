@@ -17,17 +17,25 @@
   </head>
   <body class="bg-gray-100">
     <style>
-      .hidden {
-        display: none;
-      }
-      .fade {
+      .fade-in {
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
       }
-      .fade.active {
+
+      .fade-out {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .fade-in.active {
         opacity: 1;
       }
+
+      .fade-out.active {
+        opacity: 0;
+      }
     </style>
+
     <nav class="bg-white shadow-md py-4 fixed w-full z-10 top-0">
       <div class="container mx-auto flex justify-between items-center px-4">
         <div
@@ -67,7 +75,7 @@
     <div id="content">
       <div
         id="home"
-        class="fade active h-screen flex justify-center items-center bg-gray-100"
+        class="hidden fade-in h-screen flex justify-center items-center bg-gray-100"
       >
         <div class="text-center">
           <img
@@ -102,15 +110,17 @@
           </ul>
         </div>
       </div>
+
       <div
         id="experience"
-        class="fade hidden h-screen flex justify-center items-center bg-gray-200"
+        class="hidden fade-in h-screen flex justify-center items-center bg-gray-200"
       >
         <h1 class="text-4xl font-bold text-gray-800">Experience Section</h1>
       </div>
+
       <div
         id="projects"
-        class="fade hidden h-screen flex justify-center items-center bg-gray-300"
+        class="hidden fade-in h-screen flex justify-center items-center bg-gray-300"
       >
         <h1 class="text-4xl font-bold text-gray-800">Projects Section</h1>
       </div>
@@ -122,13 +132,16 @@
 
       function showSection(id) {
         contentSections.forEach((section) => {
-          section.classList.add("hidden");
-          section.classList.remove("active");
+          section.classList.remove("fade-in");
+          section.classList.add("fade-out");
         });
 
         const activeSection = document.getElementById(id);
-        activeSection.classList.remove("hidden");
-        setTimeout(() => activeSection.classList.add("active"), 10);
+        setTimeout(() => {
+          contentSections.forEach((section) => section.classList.add("hidden"));
+          activeSection.classList.remove("hidden", "fade-out");
+          activeSection.classList.add("fade-in");
+        }, 300); // Timing should match the CSS transition duration
       }
 
       navLinks.forEach((link) => {
