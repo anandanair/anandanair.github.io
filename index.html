@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minimalist Portfolio</title>
     <style>
+      .intro {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+      }
+      .intro-text {
+        color: #fff;
+        text-align: left;
+      }
+      .profile-pic {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #4caf50;
+      }
       body {
         font-family: Arial, sans-serif;
         line-height: 1.6;
@@ -101,10 +118,19 @@
     </header>
 
     <section id="home">
-      <h1>Hello, I'm [Your Name]</h1>
-      <p>Frontend Developer</p>
-      <a href="#portfolio" class="btn">Hire Me</a>
-      <a href="#contact" class="btn">Let's Talk</a>
+      <div class="intro">
+        <img
+          src="PXL_20211025_113346673~2.jpg"
+          alt="Anand A Nair"
+          class="profile-pic"
+        />
+        <div class="intro-text">
+          <h1>Hi, I'm Anand A Nair</h1>
+          <p>Frontend Developer</p>
+          <a href="#portfolio" class="btn">Hire Me</a>
+          <a href="#contact" class="btn">Let's Talk</a>
+        </div>
+      </div>
     </section>
 
     <section id="about">
@@ -137,7 +163,7 @@
     </section>
 
     <footer>
-      <p>&copy; 2024 [Your Name]. All rights reserved.</p>
+      <p>&copy; 2024 Anand A Nair. All rights reserved.</p>
     </footer>
   </body>
 </html>
