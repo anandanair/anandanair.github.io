@@ -22,13 +22,13 @@
         transition: opacity 0.5s ease-in-out;
       }
 
+      .fade-in.active {
+        opacity: 1;
+      }
+
       .fade-out {
         opacity: 1;
         transition: opacity 0.5s ease-in-out;
-      }
-
-      .fade-in.active {
-        opacity: 1;
       }
 
       .fade-out.active {
@@ -187,19 +187,18 @@
       const navLinks = document.querySelectorAll("nav ul li a");
 
       function showSection(id) {
-        const activeSection = document.getElementById(id);
+        // Hide all sections and reset their opacity
         contentSections.forEach((section) => {
           section.classList.add("hidden");
-          section.classList.remove("fade-in");
+          section.classList.remove("fade-in", "fade-out");
         });
+
+        // Show the target section and trigger the fade-in effect
+        const activeSection = document.getElementById(id);
         activeSection.classList.remove("hidden");
         setTimeout(() => {
           activeSection.classList.add("fade-in");
         }, 10); // Small delay to trigger the fade-in effect
-        window.scrollTo({
-          top: activeSection.offsetTop,
-          behavior: "smooth",
-        });
       }
 
       navLinks.forEach((link) => {
@@ -208,9 +207,16 @@
           const targetId = link.getAttribute("href").substring(1);
           showSection(targetId);
 
+          // Highlight the active link
           navLinks.forEach((nav) => nav.classList.remove("text-blue-500"));
           link.classList.add("text-blue-500");
         });
+      });
+
+      // Show the home section by default on page load
+      window.addEventListener("load", () => {
+        showSection("home");
+        navLinks[0].classList.add("text-blue-500");
       });
     </script>
   </body>
