@@ -34,9 +34,51 @@
       .fade-out.active {
         opacity: 0;
       }
+
+      @media (max-width: 1024px) {
+        nav ul {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background: white;
+          padding: 1rem;
+        }
+        nav ul.active {
+          display: flex;
+        }
+      }
     </style>
 
     <nav class="bg-white shadow-md py-4 fixed w-full z-10 top-0">
+      <!-- Add this inside your <nav> -->
+      <button id="menu-toggle" class="lg:hidden focus:outline-none">
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          ></path>
+        </svg>
+      </button>
+
+      <!-- Add this script for mobile menu toggle -->
+      <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const navMenu = document.querySelector("nav ul");
+
+        menuToggle.addEventListener("click", () => {
+          navMenu.classList.toggle("hidden");
+        });
+      </script>
       <div class="container mx-auto flex justify-between items-center px-4">
         <div
           class="text-2xl font-semibold text-gray-800 hover:text-blue-500 transition duration-300"
@@ -92,22 +134,23 @@
             and streamlining operations at Click2View through the development of
             innovative solutions like Click4IT. Excelled in web and software
             development, demonstrating strong problem-solving skills and a
-            commitment to excellence. Achieved above expectations ratings at
-            Micron Technology, showcasing exceptional end-user training and
-            incident management capabilities.
+            commitment to excellence.
           </p>
-          <h3 class="text-2xl font-semibold text-gray-800 mt-6">Skills</h3>
-          <ul class="list-none mt-2 text-gray-600">
-            <li>Web Development</li>
-            <li>Software Development</li>
-            <li>Asset Management</li>
-            <li>End-user Training</li>
-            <li>Hardware Installation</li>
-            <li>Mobile Device Management</li>
-            <li>Incident Management</li>
-            <li>Application Support</li>
-            <li>Remote Desktop Support</li>
-          </ul>
+          <div class="mt-6">
+            <a
+              href="#projects"
+              class="bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-300"
+              >View Projects</a
+            >
+          </div>
+          <div class="mt-6 flex justify-center space-x-4">
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">
+              <img src="linkedin-icon.png" alt="LinkedIn" class="w-8 h-8" />
+            </a>
+            <a href="https://github.com/yourprofile" target="_blank">
+              <img src="github-icon.png" alt="GitHub" class="w-8 h-8" />
+            </a>
+          </div>
         </div>
       </div>
 
@@ -125,23 +168,38 @@
         <h1 class="text-4xl font-bold text-gray-800">Projects Section</h1>
       </div>
     </div>
+    <footer class="bg-white shadow-md py-6 mt-8">
+      <div class="container mx-auto text-center">
+        <p class="text-gray-600">© 2025 Anand. All rights reserved.</p>
+        <div class="mt-4 flex justify-center space-x-4">
+          <a href="https://linkedin.com/in/yourprofile" target="_blank">
+            <img src="linkedin-icon.png" alt="LinkedIn" class="w-6 h-6" />
+          </a>
+          <a href="https://github.com/yourprofile" target="_blank">
+            <img src="github-icon.png" alt="GitHub" class="w-6 h-6" />
+          </a>
+        </div>
+      </div>
+    </footer>
 
     <script>
       const contentSections = document.querySelectorAll("#content > div");
       const navLinks = document.querySelectorAll("nav ul li a");
 
       function showSection(id) {
-        contentSections.forEach((section) => {
-          section.classList.remove("fade-in");
-          section.classList.add("fade-out");
-        });
-
         const activeSection = document.getElementById(id);
+        contentSections.forEach((section) => {
+          section.classList.add("hidden");
+          section.classList.remove("fade-in");
+        });
+        activeSection.classList.remove("hidden");
         setTimeout(() => {
-          contentSections.forEach((section) => section.classList.add("hidden"));
-          activeSection.classList.remove("hidden", "fade-out");
           activeSection.classList.add("fade-in");
-        }, 300); // Timing should match the CSS transition duration
+        }, 10); // Small delay to trigger the fade-in effect
+        window.scrollTo({
+          top: activeSection.offsetTop,
+          behavior: "smooth",
+        });
       }
 
       navLinks.forEach((link) => {
