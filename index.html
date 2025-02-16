@@ -1,126 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minimalistic Navbar</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+        <style>body { font-family: 'Poppins', sans-serif; }</style>
+    </head>
+<body class="bg-gray-100">
     <style>
-      body {
-        font-family: "Poppins", sans-serif;
-      }
-    </style>
-  </head>
-  <body class="bg-gray-100">
-    <style>
-      .hidden {
-        display: none;
-      }
-      .fade {
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-      }
-      .fade.active {
-        opacity: 1;
-      }
+        .hidden { display: none; }
+        .fade { opacity: 0; transition: opacity 0.5s ease-in-out; }
+        .fade.active { opacity: 1; }
     </style>
     <nav class="bg-white shadow-md py-4 fixed w-full z-10 top-0">
-      <div class="container mx-auto flex justify-between items-center px-4">
-        <div
-          class="text-2xl font-semibold text-gray-800 hover:text-blue-500 transition duration-300"
-        >
-          Anand
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-2xl font-semibold text-gray-800 hover:text-blue-500 transition duration-300">Anand</div>
+            <ul class="flex space-x-8 text-gray-600 font-medium">
+                <li><a href="#home" class="hover:text-blue-500 transition duration-300">Home</a></li>
+                <li><a href="#experience" class="hover:text-blue-500 transition duration-300">Experience</a></li>
+                <li><a href="#projects" class="hover:text-blue-500 transition duration-300">Projects</a></li>
+                
+            </ul>
+            <a href="https://wa.me/+6594653810" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-300">Let's Chat</a>
         </div>
-        <ul class="flex space-x-8 text-gray-600 font-medium">
-          <li>
-            <a href="#home" class="hover:text-blue-500 transition duration-300"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a
-              href="#experience"
-              class="hover:text-blue-500 transition duration-300"
-              >Experience</a
-            >
-          </li>
-          <li>
-            <a
-              href="#projects"
-              class="hover:text-blue-500 transition duration-300"
-              >Projects</a
-            >
-          </li>
-          <li>
-            <a href="#about" class="hover:text-blue-500 transition duration-300"
-              >About</a
-            >
-          </li>
-        </ul>
-        <a
-          href="https://wa.me/+6594653810"
-          target="_blank"
-          class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-300"
-          >Let's Chat</a
-        >
-      </div>
     </nav>
-    <div id="content">
-      <div
-        id="home"
-        class="fade active h-screen flex justify-center items-center bg-gray-100"
-      >
-        <h1 class="text-4xl font-bold text-gray-800">Welcome to Home</h1>
-      </div>
-      <div
-        id="experience"
-        class="fade hidden h-screen flex justify-center items-center bg-gray-200"
-      >
-        <h1 class="text-4xl font-bold text-gray-800">Experience Section</h1>
-      </div>
-      <div
-        id="projects"
-        class="fade hidden h-screen flex justify-center items-center bg-gray-300"
-      >
-        <h1 class="text-4xl font-bold text-gray-800">Projects Section</h1>
-      </div>
-      <div
-        id="about"
-        class="fade hidden h-screen flex justify-center items-center bg-gray-400"
-      >
-        <h1 class="text-4xl font-bold text-gray-800">About Section</h1>
-      </div>
+<div id="content">
+        <div id="home" class="fade active h-screen flex justify-center items-center bg-gray-100">
+    <div class="container mx-auto flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 text-left px-6">
+            <h1 class="text-5xl font-bold text-gray-800">Anand</h1>
+            <p class="text-2xl text-gray-600 mt-2">Web Developer | IT Support Specialist</p>
+            <p class="mt-4 text-gray-700">Proven IT specialist with a track record of enhancing cybersecurity and streamlining operations at Click2View through the development of innovative solutions like Click4IT. Excelled in web and software development, demonstrating strong problem-solving skills and a commitment to excellence. Achieved above expectations ratings at Micron Technology, showcasing exceptional end-user training and incident management capabilities.</p>
+            <h3 class="text-2xl font-semibold text-gray-800 mt-6">Skills</h3>
+            <ul class="list-disc list-inside mt-2 text-gray-600">
+                <li>Web Development</li>
+                <li>Software Development</li>
+                <li>Asset Management</li>
+                <li>End-user Training</li>
+                <li>Hardware Installation</li>
+                <li>Mobile Device Management</li>
+                <li>Incident Management</li>
+                <li>Application Support</li>
+                <li>Remote Desktop Support</li>
+            </ul>
+        </div>
+        <div class="md:w-1/2 flex justify-center md:justify-end mt-8 md:mt-0">
+            <img src="edited_profile_pic.png" alt="Your Name" class="w-64 h-auto rounded-2xl shadow-lg">
+        </div>
     </div>
-
+</div>
+</div>
+        <div id="experience" class="fade hidden h-screen flex justify-center items-center bg-gray-200">
+            <h1 class="text-4xl font-bold text-gray-800">Experience Section</h1>
+        </div>
+        <div id="projects" class="fade hidden h-screen flex justify-center items-center bg-gray-300">
+            <h1 class="text-4xl font-bold text-gray-800">Projects Section</h1>
+        </div>
+        
+    </div>
+    
+    
+    
     <script>
-      const contentSections = document.querySelectorAll("#content > div");
-      const navLinks = document.querySelectorAll("nav ul li a");
+        const contentSections = document.querySelectorAll('#content > div');
+        const navLinks = document.querySelectorAll('nav ul li a');
 
-      function showSection(id) {
-        contentSections.forEach((section) => {
-          section.classList.add("hidden");
-          section.classList.remove("active");
+        function showSection(id) {
+            contentSections.forEach(section => { section.classList.add('hidden'); section.classList.remove('active'); });
+
+            const activeSection = document.getElementById(id);
+            activeSection.classList.remove('hidden');
+            setTimeout(() => activeSection.classList.add('active'), 10);
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                showSection(targetId);
+
+                navLinks.forEach(nav => nav.classList.remove('text-blue-500'));
+                link.classList.add('text-blue-500');
+            });
         });
-
-        const activeSection = document.getElementById(id);
-        activeSection.classList.remove("hidden");
-        setTimeout(() => activeSection.classList.add("active"), 10);
-      }
-
-      navLinks.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          const targetId = link.getAttribute("href").substring(1);
-          showSection(targetId);
-
-          navLinks.forEach((nav) => nav.classList.remove("text-blue-500"));
-          link.classList.add("text-blue-500");
-        });
-      });
     </script>
-  </body>
+</body>
 </html>
