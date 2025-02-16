@@ -1,0 +1,112 @@
+html Copy code
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom styles */
+      .hero-image {
+        background-image: url("edited_profile_pic.png");
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+  </head>
+
+  <body class="font-sans bg-gray-50 text-gray-900">
+    <!-- Hero Section -->
+    <section
+      class="hero-image h-screen flex items-center justify-center text-white bg-gradient-to-r from-blue-600 to-indigo-600"
+    >
+      <div class="text-center space-y-4">
+        <h1 class="text-5xl font-semibold">Hello, I'm Your Name</h1>
+        <p class="text-lg">Web Developer | Designer | Creator</p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white text-center">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-semibold mb-4">About Me</h2>
+        <p class="text-lg max-w-3xl mx-auto">
+          I am a passionate web developer with experience in building
+          responsive, user-friendly websites. I enjoy solving complex problems
+          and creating simple, elegant solutions.
+        </p>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-semibold mb-8">My Projects</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project Item -->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img
+              src="your-project-image1.jpg"
+              alt="Project 1"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold">Project 1</h3>
+              <p class="text-gray-600">
+                Brief description of the project or what was accomplished here.
+              </p>
+            </div>
+          </div>
+          <!-- Add more project items as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white text-center">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-semibold mb-4">Contact Me</h2>
+        <form
+          action="mailto:youremail@example.com"
+          method="post"
+          enctype="text/plain"
+          class="space-y-4"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            class="w-full p-4 border border-gray-300 rounded-lg"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            class="w-full p-4 border border-gray-300 rounded-lg"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            class="w-full p-4 border border-gray-300 rounded-lg"
+            rows="4"
+            required
+          ></textarea>
+          <button
+            type="submit"
+            class="w-full bg-blue-600 text-white p-4 rounded-lg"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4">
+      <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
