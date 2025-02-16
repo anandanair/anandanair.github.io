@@ -9,6 +9,11 @@
         <style>body { font-family: 'Poppins', sans-serif; }</style>
     </head>
 <body class="bg-gray-100">
+    <style>
+        .hidden { display: none; }
+        .fade { opacity: 0; transition: opacity 0.5s ease-in-out; }
+        .fade.active { opacity: 1; }
+    </style>
     <nav class="bg-white shadow-md py-4 fixed w-full z-10 top-0">
         <div class="container mx-auto flex justify-between items-center px-4">
             <div class="text-2xl font-semibold text-gray-800 hover:text-blue-500 transition duration-300">Anand</div>
@@ -21,5 +26,56 @@
             <button class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600"><a href="https://wa.me/+6594653810" target="_blank"><a href="https://wa.me/+6594653810" target="_blank"><button class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 transition duration-300">Let's Chat</button></a></a>
         </div>
     </nav>
+<div id="content">
+        <div id="home" class="fade active h-screen flex justify-center items-center bg-gray-100">
+            <h1 class="text-4xl font-bold text-gray-800">Welcome to Home</h1>
+        </div>
+        <div id="experience" class="fade hidden h-screen flex justify-center items-center bg-gray-200">
+            <h1 class="text-4xl font-bold text-gray-800">Experience Section</h1>
+        </div>
+        <div id="projects" class="fade hidden h-screen flex justify-center items-center bg-gray-300">
+            <h1 class="text-4xl font-bold text-gray-800">Projects Section</h1>
+        </div>
+        <div id="about" class="fade hidden h-screen flex justify-center items-center bg-gray-400">
+            <h1 class="text-4xl font-bold text-gray-800">About Section</h1>
+        </div>
+    </div>
+    <section id="experience" class="h-screen flex justify-center items-center bg-gray-200">
+        <h1 class="text-4xl font-bold text-gray-800">Experience Section</h1>
+    </section>
+    <section id="projects" class="h-screen flex justify-center items-center bg-gray-300">
+        <h1 class="text-4xl font-bold text-gray-800">Projects Section</h1>
+    </section>
+    <section id="about" class="h-screen flex justify-center items-center bg-gray-400">
+        <h1 class="text-4xl font-bold text-gray-800">About Section</h1>
+    </section>
+
+    <script>
+        const sections = document.querySelectorAll('#content > div');
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        function showSection(id) {
+            sections.forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('active');
+            });
+
+            const activeSection = document.getElementById(id);
+            activeSection.classList.remove('hidden');
+            setTimeout(() => activeSection.classList.add('active'), 10);
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                showSection(targetId);
+
+                navLinks.forEach(nav => nav.classList.remove('text-blue-500'));
+                link.classList.add('text-blue-500');
+            });
+        });
+        
+    </script>
 </body>
 </html>
