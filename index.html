@@ -167,17 +167,17 @@
       const navLinks = document.querySelectorAll("nav ul li a");
 
       function showSection(id) {
-        // Hide all sections
+        // Hide all sections and remove the active class
         contentSections.forEach((section) => {
           section.classList.add("hidden");
-          section.classList.remove("fade-in");
+          section.classList.remove("fade-in", "active");
         });
 
-        // Show the target section
+        // Show the target section and add the active class
         const activeSection = document.getElementById(id);
         activeSection.classList.remove("hidden");
         setTimeout(() => {
-          activeSection.classList.add("fade-in");
+          activeSection.classList.add("fade-in", "active");
         }, 10); // Small delay to trigger the fade-in effect
       }
 
