@@ -4,7 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minimalist Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+      header {
+        background: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+      }
+      nav ul {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+      }
+      nav ul li {
+        margin: 0 15px;
+      }
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      section {
+        padding: 60px 20px;
+        text-align: center;
+      }
+      #home {
+        background: #333;
+        color: #fff;
+        padding: 100px 20px;
+      }
+      #portfolio .project {
+        background: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px;
+        transition: transform 0.3s;
+      }
+      #portfolio .project:hover {
+        transform: translateY(-10px);
+      }
+      footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 20px;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -25,7 +82,10 @@
 
     <section id="about">
       <h2>About Me</h2>
-      <p>Brief introduction and your skills.</p>
+      <p>
+        I'm a web developer with a passion for creating beautiful and functional
+        websites.
+      </p>
     </section>
 
     <section id="portfolio">
@@ -36,18 +96,21 @@
           <p>Description of the project.</p>
           <a href="#">View Project</a>
         </div>
+        <div class="project">
+          <h3>Another Project</h3>
+          <p>Another project description.</p>
+          <a href="#">View Project</a>
+        </div>
       </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Find me on social media or send a message.</p>
+      <p>Connect with me on social media or send a message.</p>
     </section>
 
     <footer>
       <p>&copy; 2024 [Your Name]. All rights reserved.</p>
     </footer>
-
-    <script src="scripts.js"></script>
   </body>
 </html>
