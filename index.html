@@ -13,10 +13,7 @@
       body {
         font-family: "Poppins", sans-serif;
       }
-    </style>
-  </head>
-  <body class="bg-gray-100">
-    <style>
+
       .fade-in {
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
@@ -24,15 +21,6 @@
 
       .fade-in.active {
         opacity: 1;
-      }
-
-      .fade-out {
-        opacity: 1;
-        transition: opacity 0.5s ease-in-out;
-      }
-
-      .fade-out.active {
-        opacity: 0;
       }
 
       @media (max-width: 1024px) {
@@ -51,9 +39,9 @@
         }
       }
     </style>
-
+  </head>
+  <body class="bg-gray-100">
     <nav class="bg-white shadow-md py-4 fixed w-full z-10 top-0">
-      <!-- Add this inside your <nav> -->
       <button id="menu-toggle" class="lg:hidden focus:outline-none">
         <svg
           class="w-6 h-6"
@@ -69,16 +57,6 @@
           ></path>
         </svg>
       </button>
-
-      <!-- Add this script for mobile menu toggle -->
-      <script>
-        const menuToggle = document.getElementById("menu-toggle");
-        const navMenu = document.querySelector("nav ul");
-
-        menuToggle.addEventListener("click", () => {
-          navMenu.classList.toggle("hidden");
-        });
-      </script>
       <div class="container mx-auto flex justify-between items-center px-4">
         <div
           class="text-2xl font-semibold text-gray-800 hover:text-blue-500 transition duration-300"
@@ -114,6 +92,7 @@
         >
       </div>
     </nav>
+
     <div id="content">
       <div
         id="home"
@@ -168,6 +147,7 @@
         <h1 class="text-4xl font-bold text-gray-800">Projects Section</h1>
       </div>
     </div>
+
     <footer class="bg-white shadow-md py-6 mt-8">
       <div class="container mx-auto text-center">
         <p class="text-gray-600">© 2025 Anand. All rights reserved.</p>
@@ -187,13 +167,13 @@
       const navLinks = document.querySelectorAll("nav ul li a");
 
       function showSection(id) {
-        // Hide all sections and reset their opacity
+        // Hide all sections
         contentSections.forEach((section) => {
           section.classList.add("hidden");
-          section.classList.remove("fade-in", "fade-out");
+          section.classList.remove("fade-in");
         });
 
-        // Show the target section and trigger the fade-in effect
+        // Show the target section
         const activeSection = document.getElementById(id);
         activeSection.classList.remove("hidden");
         setTimeout(() => {
@@ -217,6 +197,14 @@
       window.addEventListener("load", () => {
         showSection("home");
         navLinks[0].classList.add("text-blue-500");
+      });
+
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const navMenu = document.querySelector("nav ul");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("hidden");
       });
     </script>
   </body>
